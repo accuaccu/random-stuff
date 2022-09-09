@@ -21,6 +21,13 @@ par(mfrow = c(1,1))
 hist(rnorm(1000), col = m, col.lab = m[5], axes = F, main = '')
 hist(rnorm(1000), col = p, col.lab = p[5], axes = F, main = '')
 
+#
 x <- density(rnorm(1000))
 plot(x, col = p, axes = FALSE)
 polygon(x, col = paste0(m,33), border = m)
+
+#
+par(bg = b, pty = 's', font.axis = 3, font.lab = 3, family = 'serif', col.axis = p[5], col.lab = p[5])
+x <- rexp(20)
+plot(x, type = 'l', col = paste0(p,33), pch = 16, axes= FALSE)
+points(x, col = p)
