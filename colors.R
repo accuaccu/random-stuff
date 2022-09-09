@@ -1,5 +1,5 @@
-p <- colorRampPalette(c('#0dec53','#2ac2cf'))(10)
-m <- colorRampPalette(c('#f90076','#f95b00'))(10)
+p <- colorRampPalette(c('#0dec53','#2ac2cf'))(20)
+m <- colorRampPalette(c('#f90076','#f95b00'))(20)
 b <- '#000518'
 
 
@@ -29,5 +29,13 @@ polygon(x, col = paste0(m,33), border = m)
 #
 par(bg = b, pty = 's', font.axis = 3, font.lab = 3, family = 'serif', col.axis = p[5], col.lab = p[5])
 x <- rexp(20)
-plot(x, type = 'l', col = paste0(p,33), pch = 16, axes= FALSE)
+plot(x, type = 'l', col = paste0(p,0), pch = 16, axes= FALSE)
+lines(smooth.spline(x, df = 15), col = p)
+
+arrows(x0 = seq(1,20,1), x1 = seq(1,20,1),
+       y0 = rep(0,20), y1 = x,
+       code = 3, col = paste0(p,53), length = 0)
 points(x, col = p)
+abline(h = 0, col = paste0(p,33))
+
+
